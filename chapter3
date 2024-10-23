@@ -1,0 +1,43 @@
+26:
+def wallisn(n):
+    result = 1
+    for i in range(1, n + 1):
+        result *= (4 * i**2) / (4 * i**2 - 1)
+    return 2 * result
+
+n = 1000
+pi_approx = wallis_pi_approximation(n)
+print(pi_approx)
+------------------
+27:
+fib_cache = {1:1,2:1}
+def fib(n):
+    result = fib_cache.get(n)
+    if result is None:
+        result = fib(n-2) + fib(n-1)
+        fib_cache[n] = result
+    return result
+print(fib(1000))
+------------------
+28:
+import math
+a = 6_378_137
+c = 6_356_752.314_245
+e=(1-(c**2/a**2))**(1/2)
+pi = 3.14
+S = (2*pi*a**2)*(1+((1-e**2)/e)*math.atan(e))
+
+------------------
+29:
+s1 = 'acctaggt'
+s2 = 'tggatcaa'
+c =0
+for i in range(0,len(s1)-1):
+    for j in range(len(s2)-1,-1,-1):
+        if s1[i]==s2[j]:
+            c += 1
+        else:
+            break
+            print("не палиндромы")
+if c == len(s1):
+    print("палиндромы")
