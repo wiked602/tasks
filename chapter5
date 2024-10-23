@@ -1,0 +1,33 @@
+gold_prices_1 = [100, 120, 140, 160, 180, 200, 220]
+gold_prices_2 = [200, 180, 220, 160, 240, 260, 210]
+gold_prices_3 = [250, 230, 210, 190, 170, 150, 130]
+gold_prices_4 = [200, 200, 200, 200, 200, 200, 200]
+gold_prices_5 = [150, 160, 155, 170, 180, 175, 165]
+k = []
+mx = 0
+den1 =[]
+den2=[]
+def somefn():
+    for i in range(len(gold_prices_5)-1):
+        for j in range(i+1,len(gold_prices_5)):
+            k.append(abs(gold_prices_5[i]-gold_prices_5[j]))
+            if abs(gold_prices_5[i] - gold_prices_5[j]) == max(k):
+                den1.append(i)
+                den2.append(j)
+    return den1[-1]+1,den2[-1]+1,max(k)
+print(somefn())
+def func(items_4,weight_limit_4):
+    best = 0
+    curr = weight_limit_4
+    best_can = ()
+    for w,i in items_4:
+        if w <= weight_limit_4  and w <= curr:
+            if i > best:
+                b
+                
+    return best
+print(func(items_4,weight_limit_4))
+
+
+
+
