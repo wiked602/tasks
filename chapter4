@@ -1,0 +1,46 @@
+1:
+a = []
+for i in range(3):
+    i = int(input())
+    a.append(i)
+b = []
+for i in range(3):
+    i = int(input())
+    b.append(i)
+def power(a,b):
+    c = (a[1] * b[2] - a[2] * b[1] , a[0]*b[2] - a[2] * b[0] , a[0] * b[1] - a[1])
+    return c
+def skar(a,b):
+    c = a[0] * b[0] + a[1] * b[1] + a[2] * b[2]
+    return c
+print(power(a,b),skar(a,b))
+----------------------
+3:
+n = int(input("слева сверху"))
+x = int(input("снизу"))
+import sys 
+sys.set_int_max_str_digits(10**6)
+def f(x,n):
+    if n == 0:
+        return 1
+    c = x**f(x,n-1)
+    return c
+print(len(str(f(x,n))))
+-----------------------
+7:
+import sys
+sys.setrecursionlimit(10**6)
+n = int(input())
+def fact(n):
+    if n == 0:
+        return 0
+    if n == 1:
+        return 1
+    else:
+        return n*fact(n-1)
+k = int(input())
+for x in range(10000,0,-1):
+    if fact(n)%(k**x)==0:
+        print(x)
+        break
+-------------------------
