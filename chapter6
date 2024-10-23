@@ -1,0 +1,154 @@
+//Делал на самом уроке ,и на уроке все работало,после того как решил запустить код дома,ничего не поменяв, он перестал работать
+class Stack:
+    def init(self):
+        self.items = []
+
+    def is_empty(self):
+        if len(self.items)==0:
+            return True
+        else:
+            return False
+    
+    def push(self, item):
+     self.items.append(item)
+    
+    def pop(self):
+        if self.is_empty()==True:
+            return "error"
+        else:
+            return self.items.pop()
+    
+    def peek(self):
+        if self.is_empty()==True:
+            return "error"
+        else:
+            return self.items[-1]
+    
+    def size(self):
+        return len(self.items)
+
+my_stack = Stack()
+
+my_stack.push(2)
+my_stack.push(2)
+my_stack.push(3)
+
+print("Stack:", my_stack.items)
+
+# Pop an item from the stack
+popped_item = my_stack.pop()
+print("Popped item:", popped_item)
+
+# Peek at the top of the stack
+top_item = my_stack.peek()
+print("Top item:", top_item)
+
+# Check if the stack is empty
+print("Is stack empty?", my_stack.is_empty())
+
+# Get the size of the stack
+print("Stack size:", my_stack.size())
+-------------------------------------------- 
+class Queue:
+    def init(self):
+        self.items = []
+
+    def is_empty(self):
+        if len(self.items)==0:
+            return True
+        else:
+            return False
+     
+    def enqueue(self, item, priority=5):
+     self.items.append(item)
+     self.sort_queue()
+     
+     
+    def dequeue(self):
+     return sorted(self.items).pop()
+     
+    def front(self):
+     if self.is_empty==True:
+         return "error"
+     else:
+         return self.items[0]
+    def size(self):
+     return len(self.items)
+     
+    def sort_queue(self):
+        sorted(self.items,key = lambda x: x + 1)
+# Example usage:
+my_queue = Queue()
+
+my_queue.enqueue(1, priority=2)
+my_queue.enqueue(2, priority=5)
+my_queue.enqueue(3, priority=0)
+
+print("Queue:", my_queue.items)
+
+# Dequeue an item from the queue
+dequeued_item = my_queue.dequeue()
+print("Dequeued item:", dequeued_item)
+
+# Get the front of the queue
+front_item = my_queue.front()
+print("Front item:", front_item)
+
+# Enqueue a new item with priority
+my_queue.enqueue(4, priority=3)
+print("Queue after enqueue:", my_queue.items)
+
+# Check if the queue is empty
+print("Is queue empty?", my_queue.is_empty())
+
+# Get the size of the queue
+print("Queue size:", my_queue.size())
+-----------------------------------------------------------------------
+import sys
+sys.setrecursionlimit(10**6)
+class Node:
+    def init(self, data=None):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def init(self):
+        self.head = None
+
+    def is_empty(self):
+     if (self.head) == None:
+         return True
+     else:
+         return False
+         
+    def append(self, data):
+     if self.is_empty():
+         self.head = Node(data)
+         return
+     current = self.head
+     while current.next:
+         current = current.next
+     current.next = Node(data)
+    def prepend(self, data):
+     return self.prepend(data)
+     
+    def delete(self, data):
+     self.pop(data)
+     return self
+    def display(self):
+     return self.head
+
+# Example usage:
+my_linked_list = LinkedList()
+
+my_linked_list.append(1)
+my_linked_list.append(2)
+my_linked_list.append(3)
+
+my_linked_list.prepend(0)
+
+my_linked_list.display()
+
+my_linked_list.delete(2)
+
+my_linked_list.display()
