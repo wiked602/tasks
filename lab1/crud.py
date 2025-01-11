@@ -2,7 +2,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from orm import setup_database, create_session, Directors, Movies  # Подключаем модели из ORM
 
-engine = setup_database("sqlite:///movie.sqlite")
+engine = setup_database("sqlite:///movies.sqlite")
 session = create_session(engine)
 #Create
 def add_director(name):
