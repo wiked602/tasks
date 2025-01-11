@@ -113,16 +113,15 @@ def delete_movie(movie_id):
 
 
 if __name__ == "__main__":
-
-
-
+    add_director("New_director")
+    add_movie("New_movie")
 
     get_movie_by_id(43602)
     get_director_by_id(65417)
 
-    """update_movie(movie_id,"New_name2")
-    update_director(director_id,"New_director2")
+    update_movie(movie_id,"New_name")
+    update_director(director_id,"New_director")
 
     delete_movie(movie_id)
-    delete_director(director_id)"""
+    delete_director(director_id)
 
