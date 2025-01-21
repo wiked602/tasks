@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Director Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ director.name }}</h1>
+        <div class="row">
+             <div class="col-md-12">
+                <p><strong>Department:</strong> {{ director.department }}</p>
+                <h2>Films</h2>
+                <ul>
+                    {% for movie in director.movies %}
+                        <li>{{ movie.original_title }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+         <a href="/" class="btn btn-secondary">Back to Home Page</a>
+    </div>
+</body>
+</html>

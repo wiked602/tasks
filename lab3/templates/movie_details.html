@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Details</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1>{{ movie.original_title }}</h1>
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Overview</h2>
+                <p>{{ movie.overview }}</p>
+                <p><strong>Vote Average:</strong> {{ movie.vote_average }}</p>
+                <p><strong>Director:</strong> {{ movie.director.name }}</p>
+            </div>
+        </div>
+         <a href="/" class="btn btn-secondary">Back to Home page</a>
+    </div>
+</body>
+</html>

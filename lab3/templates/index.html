@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie App</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        #movieList.hidden, #directorList.hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Movies and Directors</h1>
+
+        <a href="/?show_movies=true" class="btn btn-primary">
+          Show Movies
+        </a>
+
+        <a href="/?show_directors=true" class="btn btn-info">
+           Show Directors
+       </a>
+
+        <ul id="movieList" {% if not show_movies %}class="hidden"{% endif %}>
+            {% for movie in movies %}
+                <li>
+                    {{ movie.original_title }}
+                    <a href="/movie/{{ movie.id }}" class="btn btn-primary btn-sm">Details</a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        <ul id="directorList" {% if not show_directors %}class="hidden"{% endif %}>
+            {% for director in directors %}
+                <li>
+                   {{ director.name }}
+                   <a href="/director/{{director.id}}" class = "btn btn-info btn-sm">Details</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
